@@ -16,9 +16,6 @@
     color: #404040;
     background-color: white;
   }
-  p {
-    text-transform: none;
-  }
   ul {
     list-style: none;
     padding-left: 0;
@@ -35,11 +32,11 @@
     background-color: #f2f2f2;
     padding: 25px;
   }
-  h3 {
+  #portfolio {
     padding: 30px;
     text-transform: uppercase;
   }
-  h3, .top-nav {
+  #portfolio, .top-nav {
     text-align: center;
   }
 
@@ -64,7 +61,9 @@
     text-transform: uppercase;
     color: #404040;
   }
-
+  h1 {
+    text-align: center;
+  }
   h4, p {
     color: #404040;
   }
@@ -128,10 +127,12 @@ footer {
 .intro {
   display: flex;
   flex-direction: row-reverse;
+  flex-wrap: wrap;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
   max-width: 1024px;
   padding: 30px 60px 30px 30px;
   margin: 0 auto;
-  font-family: 'Roboto', sans-serif;
   font-size: 22px;
   line-height: 1.5;
   background-color: #f2f2f2;
@@ -140,9 +141,18 @@ footer {
   display: flex;
   flex-direction: row-reverse;
   vertical-align: top;
+  align-self: center;
 }
 .portfolio {
-  max-width: 300px;
+  width: 300px;
+}
+#portfolio {
+    width: 100%;
+    background-color: white;
+}
+#portfolio {
+  width: 100%;
+  background-color: white;
 }
 #contact {
   text-align: center;
@@ -166,20 +176,27 @@ footer {
   font-weight: bold;
 }
       /* Media Queries ------------------- */
-      @media (min-width: 320px) {
-        .intro {
-          text-align: center;
-        }
-      }
+
       @media (min-width: 768px) {
+        h1 {
+          text-align: center;
+          padding: 30px;
+        }
+        .intro {
+          display: flex;
+          flex-wrap: nowrap;
+          text-align: left;
+        }
         .top-nav {
           margin-top: 0;
+          display: flex;
+          flex-direction: row;
         }
 
         .top-nav li {
-          display: inline-block;
-          width: auto;
+          display: flex;
           margin-right: 15px;
+          justify-content: center;
           background-color: transparent;
         }
 
@@ -193,6 +210,7 @@ footer {
         .container {
           display: flex;
           flex-wrap: wrap;
+          flex-direction: row;
         }
         .col {
           flex-basis: calc(50% - 20px);
@@ -204,13 +222,20 @@ footer {
           display: inline-block;
           margin-left: 20px;
         }
-        .intro {
-          text-align: left;
-        }
       }
       @media (min-width: 1024px) {
+        h1 {
+          text-align: left;
+          padding: 0;
+        }
+        .intro {
+          display: flex;
+          flex-wrap: nowrap;
+          text-align: left;
+        }
         nav {
           display: flex;
+          flex-wrap: wrap;
           justify-content: space-between;
           align-items: center;
         }
@@ -222,4 +247,5 @@ footer {
         .col {
           flex-basis: calc(33.333% - 20px);
         }
+
       }
